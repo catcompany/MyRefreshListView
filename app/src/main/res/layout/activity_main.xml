@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="50dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/basetext"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="#ff0"
+        android:text="BaseRefreshListView，其他ListView基于它去改造！" />
+
+    <TextView
+        android:id="@+id/atext"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="#ff0"
+        android:text="第一种样式" />
+
+    <TextView
+        android:id="@+id/btext"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="#ff0"
+        android:text="第二种样式" />
+
+</LinearLayout>

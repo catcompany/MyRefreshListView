@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CustomRefreshListView</string>
+    <string name="lastUpdateTimeText">与其省钱，不如理财赚钱！</string>
+    <string name="refreshingText">努力刷新中...</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+</resources>

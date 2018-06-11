@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="white">#ffffff</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="common_line_carve_up">#dedede</color>
+    <color name="common_line_light_up">#e8e8e8</color>
+    <color name="common_refresh_loading">#B0B0B0</color>
+    <color name="personal_about_text_color">#333333</color>
+    <color name="personal_about_text_gray_color">#555555</color>
+    <color name="personal_about_text_mistygray_color">#777777</color>
+    <color name="personal_about_text_lightgray_color">#999999</color>
+    <drawable name="personal_list_item_pressed">#FaFaFa</drawable>
+    <drawable name="personal_list_item_unpressed">#FFFFFF</drawable>
+    <color name="common_title_bg">#BBA464</color>
+</resources>
