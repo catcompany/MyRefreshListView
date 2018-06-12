@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
+import com.refresh.customrefreshlistview.AInterpolator;
+import com.refresh.customrefreshlistview.AlphaInterpolator;
+import com.refresh.customrefreshlistview.AlphaTextView;
 import com.refresh.customrefreshlistview.MyCustomAdapter;
 import com.refresh.customrefreshlistview.R;
 import com.refresh.customrefreshlistview.listview.AlphaRefreshListView;
@@ -19,7 +22,7 @@ public class AListActivity extends Activity implements BaseRefreshListView.OnLis
 
     private AlphaRefreshListView mAlphaRefreshListView;
     private MyCustomAdapter mMyCustomAdapter;
-    private TextView textView;
+    private AlphaTextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +30,7 @@ public class AListActivity extends Activity implements BaseRefreshListView.OnLis
         setContentView(R.layout.a_list_activity);
         StatusBarUtil.setActivityTranslucent(this);
         mAlphaRefreshListView = (AlphaRefreshListView) findViewById(R.id.listview);
-        textView = (TextView) findViewById(R.id.text);
+        textView = (AlphaTextView) findViewById(R.id.text);
 
         View headImage = LayoutInflater.from(this).inflate(R.layout.item_image, null);
         mAlphaRefreshListView.addHeaderView(headImage);
@@ -42,9 +45,9 @@ public class AListActivity extends Activity implements BaseRefreshListView.OnLis
         mAlphaRefreshListView.setOnScrollYListener(this);
 
         textView.getBackground().setAlpha(0);
-        gradationUtil = new GradationUtil(textView);
+        textView.setInterpolator(new AInterpolator());
     }
-    GradationUtil gradationUtil;
+
     @Override
     public void onRefresh() {
         delayRefreshFinish(true);
@@ -75,6 +78,6 @@ public class AListActivity extends Activity implements BaseRefreshListView.OnLis
 
     @Override
     public void onScrollY(int y) {
-        gradationUtil.setTitleAlpha(y, mAlphaRefreshListView.isDropDown());
+        textView.setTitleAlpha(y, mAlphaRefreshListView.isDropDown());
     }
 }

@@ -14,7 +14,7 @@
         android:scrollbars="none"
         android:scrollingCache="false" />
 
-    <TextView
+    <com.refresh.customrefreshlistview.AlphaTextView
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="65dp"

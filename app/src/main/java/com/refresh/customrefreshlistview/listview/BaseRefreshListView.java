@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
+import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
@@ -491,6 +492,13 @@ public class BaseRefreshListView extends ListView implements OnScrollListener {
         setValueAnimator(fromValue, toValue, false);
     }
 
+    public class myInter implements Interpolator {
+
+        @Override
+        public float getInterpolation(float v) {
+            return 0;
+        }
+    }
     protected void setValueAnimator(int fromValue, int toValue, boolean isRefreshing) {
         isChange = true;
         mAnimator = ValueAnimator.ofInt(fromValue, toValue);

@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
+import com.refresh.customrefreshlistview.AInterpolator;
+import com.refresh.customrefreshlistview.AlphaTextView;
 import com.refresh.customrefreshlistview.MyCustomAdapter;
 import com.refresh.customrefreshlistview.R;
 import com.refresh.customrefreshlistview.listview.BaseRefreshListView;
@@ -17,10 +19,9 @@ import com.refresh.customrefreshlistview.utils.StatusBarUtil;
 
 public class BListActivity extends Activity implements BaseRefreshListView.OnListRefreshListener, DetailRefreshListView.OnScrollAlphaListener {
 
-    GradationUtil gradationUtil;
     private DetailRefreshListView mAlphaRefreshListView;
     private MyCustomAdapter mMyCustomAdapter;
-    private TextView textView;
+    private AlphaTextView textView;
     private TextView tvBg;
 
     @Override
@@ -32,7 +33,7 @@ public class BListActivity extends Activity implements BaseRefreshListView.OnLis
         StatusBarUtil.setStatusBarBg(this, getResources().getColor(R.color.transparent));
 
         mAlphaRefreshListView = (DetailRefreshListView) findViewById(R.id.listview);
-        textView = (TextView) findViewById(R.id.text);
+        textView = (AlphaTextView) findViewById(R.id.text);
         tvBg = (TextView) findViewById(R.id.tv_banner_bg);
 
         View headImage = LayoutInflater.from(this).inflate(R.layout.item_image, null);
@@ -48,7 +49,7 @@ public class BListActivity extends Activity implements BaseRefreshListView.OnLis
         mAlphaRefreshListView.setOnScrollAlphaListener(this);
 
         textView.getBackground().setAlpha(0);
-        gradationUtil = new GradationUtil(textView);
+        textView.setInterpolator(new AInterpolator());
     }
 
     @Override
@@ -79,7 +80,7 @@ public class BListActivity extends Activity implements BaseRefreshListView.OnLis
 
     @Override
     public void onScrollAlpha(int alpha) {
-        gradationUtil.setDetailAlpha(alpha, tvBg);
+        textView.setDetailAlpha(alpha, tvBg);
     }
 
 }

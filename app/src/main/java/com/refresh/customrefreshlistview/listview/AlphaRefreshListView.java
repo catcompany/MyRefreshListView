@@ -10,11 +10,11 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 
+import com.refresh.customrefreshlistview.AInterpolator;
+
 /**
- * 一、定义下拉位置setRefreshStart
- * 二、下拉控制Title背景色透明度
- * 1、AlphaRefreshListView设置setOnScrollYListener监听
- * 2、得到scrollY的值改变背景色透明度
+ * 1、定义下拉位置setRefreshStart
+ * 2、AlphaRefreshListView设置setOnScrollYListener监听
  * 注： 该类继承BaseRefreshListView（最基本的下拉刷新、控件的初始化）
  * Created by HuangZc on 2018/04/24.
  */
